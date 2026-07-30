@@ -1,0 +1,16 @@
+{% extends "onlinecourse/user_courses.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <h2>{{ course.name }}</h2>
+  <p>{{ course.description }}</p>
+  <div class="list-group">
+    {% for lesson in course.lesson_set.all %}
+      <div class="list-group-item">
+        <h5>{{ lesson.title }}</h5>
+        <p>{{ lesson.content }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
