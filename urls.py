@@ -2,9 +2,11 @@ from django.urls import path
 from . import views
 
 app_name = 'onlinecourse'
+
 urlpatterns = [
-    # ... other paths ...
+    # ... your existing paths (course list, course details, enroll, etc.) ...
+
     path('<int:course_id>/submit/', views.submit, name='submit'),
-    path('course/<int:course_id>/submission/<int:submission_id>/result/', 
+    path('<int:course_id>/submission/<int:submission_id>/result/',
          views.show_exam_result, name='show_exam_result'),
 ]
